@@ -1,0 +1,27 @@
+# Создание новой ветки для выполнения домашнего задания
+git checkout -b home_work_25
+
+# Добавление интерфейса для различных способов оплаты
+git add src/model/PaymentReceiver.java
+git commit -m "feat: feat: add PaymentReceiver interface"
+
+# Модификация CoinAcceptor для реализации нового интерфейса
+git add src/model/CoinAcceptor.java
+git commit -m "refactor: make CoinAcceptor implement PaymentReceiver"
+
+# Замена типа CoinAcceptor на интерфейс PaymentReceiver в AppRunner
+# Также обновлены вызовы: getAmount -> getBalance, setAmount -> insertMoney и т.д.
+git add src/AppRunner.java
+git commit -m "refactor: use PaymentReceiver interface in AppRunner to decouple logic from payment implementation"
+
+# Проверка работы и проведение ручного тестирования — автомат функционирует как раньше, но через интерфейс
+
+# Слияние ветки home_work_25 в master после завершения задачи
+git checkout master
+git merge home_work_25
+
+# Решение возможных конфликтов с помощью IntelliJ IDEA (если были)
+# Финальная проверка
+
+# Отправка всех изменений на GitHub
+git push origin master
