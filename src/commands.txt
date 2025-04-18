@@ -1,27 +1,27 @@
-# Создание новой ветки для выполнения домашнего задания
+# Creating a new branch for homework
 git checkout -b home_work_25
 
-# Добавление интерфейса для различных способов оплаты
+# Adding an interface for different payment methods
 git add src/model/PaymentReceiver.java
-git commit -m "feat: feat: add PaymentReceiver interface"
+git commit -m "feat: add PaymentReceiver interface"
 
-# Модификация CoinAcceptor для реализации нового интерфейса
+# Modifying CoinAcceptor to implement the new interface
 git add src/model/CoinAcceptor.java
 git commit -m "refactor: make CoinAcceptor implement PaymentReceiver"
 
-# Замена типа CoinAcceptor на интерфейс PaymentReceiver в AppRunner
-# Также обновлены вызовы: getAmount -> getBalance, setAmount -> insertMoney и т.д.
+# Replacing CoinAcceptor type with PaymentReceiver interface in AppRunner
+# Also updated method calls: getAmount -> getBalance, setAmount -> insertMoney, etc.
 git add src/AppRunner.java
 git commit -m "refactor: use PaymentReceiver interface in AppRunner to decouple logic from payment implementation"
 
-# Проверка работы и проведение ручного тестирования — автомат функционирует как раньше, но через интерфейс
+# Testing manually — the vending machine works as before but now uses the interface
 
-# Слияние ветки home_work_25 в master после завершения задачи
+# Merging home_work_25 branch into master after task completion
 git checkout master
 git merge home_work_25
 
-# Решение возможных конфликтов с помощью IntelliJ IDEA (если были)
-# Финальная проверка
+# Resolving possible conflicts using IntelliJ IDEA (if any)
+# Final verification
 
-# Отправка всех изменений на GitHub
+# Pushing all changes to GitHub
 git push origin master
